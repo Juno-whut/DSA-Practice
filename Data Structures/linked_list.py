@@ -2,16 +2,16 @@ import unittest
 
 
 class Node:
-    def __init__(self, data):
-        self.data = self.data
-        self.next = None
-        self.size = 0
+    def __init__(self, data, next):
+        self.data = data
+        self.next = next
 
 class LinkedList:
     def __init__(self):
         super().__init__()
         self.head = None
         self.tail = self.head
+        self.size = 0
 
 
     # method insert first O(1)
@@ -128,12 +128,11 @@ class LinkedList:
             raise Exception("List is Empty")
         
         node = self.head 
-        count = 0
         for i in range(self.size):
             if node.data == value:
-                return count 
+                return i 
             node = node.next
-            count += 1
+          
         raise Exception("Value not in List")
 
 
